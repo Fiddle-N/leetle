@@ -1,8 +1,11 @@
 # incorrect
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def __repr__(self):
+        return f"TreeNode({self.val}, {self.next})"
 
 def parse(head):
   l = []
@@ -29,13 +32,19 @@ def reorder(parsed):
     
     start += 1
     end -= 1
+    if start == end:
+      after.val = parsed[start]
+      return head
     if start >= end:
       next_.next = None
       return head
   
 
 def solve(head):
+  if head is None:
+    return head
   parsed = parse(head)
+  if len(parsed) == 1:
+    return head
   return reorder(parsed)
 
-  
