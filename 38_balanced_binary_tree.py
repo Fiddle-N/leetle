@@ -10,16 +10,10 @@ class NotBalanced(Exception):
   
 
 def _solve(node):
-  left = (
-    _solve(node.left)
-    if node.left is not None
-    else 0
-  )
-  right = (
-    _solve(node.right)
-    if node.right is not None
-    else 0
-  )
+  if node is None:
+    return 0
+  left = _solve(node.left)
+  right = _solve(node.right)
   if abs(left - right) > 1:
     raise NotBalanced
   height = max(left, right)
@@ -34,5 +28,4 @@ def solve(root):
     _solve(root)
   except NotBalanced:
     return False
-  else:
-    return True
+  return True
