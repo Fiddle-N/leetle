@@ -5,25 +5,25 @@
 
 
 def solve(head, n):
-    l = []
+    llist = []
     curr = head
     while True:
-        l.append(curr)
+        llist.append(curr)
         if curr.next is None:
             break
         curr = curr.next
 
-    if len(l) == 1:
+    if len(llist) == 1:
         assert n == 1
         return None
 
     if n == 1:
-        l[-2].next = None
-    elif n == len(l):
-        head = l[1]
+        llist[-2].next = None
+    elif n == len(llist):
+        head = llist[1]
     else:
         left_idx = -n - 1
         right_idx = -n + 1
-        l[left_idx].next = l[right_idx]
+        llist[left_idx].next = llist[right_idx]
 
     return head

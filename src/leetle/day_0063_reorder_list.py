@@ -9,11 +9,11 @@ class ListNode:
 
 
 def parse(head):
-    l = []
+    llist = []
     while True:
         if head is None:
-            return l
-        l.append(head.val)
+            return llist
+        llist.append(head.val)
         head = head.next
 
 
