@@ -20,3 +20,14 @@ def solve(nums):
   if nums[-1] > nums[-2]:
     # check last element
     return len(nums) - 1
+    
+# binary search version
+def solve_2(nums):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
+    return left
