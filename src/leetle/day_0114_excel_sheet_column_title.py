@@ -53,7 +53,7 @@ class TestDay114(unittest.TestCase):
         self.assertEqual(solve(704), 'AAB')
         
 
-if __name__ == __main__:
+if __name__ == "__main__":
     # use below if running in Jupyter
     # unittest.main(argv=[''], exit=False)
     unittest.main()

@@ -40,7 +40,7 @@ class TestDay120(unittest.TestCase):
         self.assertEqual(solve([-5, -4, -3, -2, -1]), -6)
 
 
-if __name__ == __main__:
+if __name__ == "__main__":
     # use below if running in Jupyter
     # unittest.main(argv=[''], exit=False)
     unittest.main()
