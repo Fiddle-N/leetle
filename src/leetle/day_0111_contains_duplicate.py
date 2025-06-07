@@ -1,2 +1,2 @@
 def solve(nums):
-  return len(set(nums)) != len(nums)
+    return len(set(nums)) != len(nums)

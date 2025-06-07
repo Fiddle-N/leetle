@@ -2,13 +2,13 @@ import unittest
 
 
 def solve(nums):
-  # assume nums is always length >3 
-  
-  # max product of three numbers
-  # must include the largest number
-  # and then the largest product of the next two
-  # must either include the two next largest numbers
-  # or the two smallest
+    # assume nums is always length >3
+
+    # max product of three numbers
+    # must include the largest number
+    # and then the largest product of the next two
+    # must either include the two next largest numbers
+    # or the two smallest
     sorted_nums = sorted(nums)
     return max(
         sorted_nums[-1] * sorted_nums[-2] * sorted_nums[-3],
@@ -17,7 +17,6 @@ def solve(nums):
 
 
 class TestDay120(unittest.TestCase):
-
     def test_leetle_case_1(self):
         self.assertEqual(solve([1, 2, 3, 4]), 24)
 
