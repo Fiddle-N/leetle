@@ -15,11 +15,11 @@ def traverse_preorder(parsed_tree):
     preorder_tree = []
 
     def traverse(node):
+        if node is None:
+            return
         preorder_tree.append(node.val)
-        if node.left is not None:
-            traverse(node.left)
-        if node.right is not None:
-            traverse(node.right)
+        traverse(node.left)
+        traverse(node.right)
 
     traverse(parsed_tree)
     return preorder_tree
