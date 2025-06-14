@@ -17,7 +17,7 @@ def traverse_postorder(parsed_tree):
         traverse(node.left)
         traverse(node.right)
         postorder_tree.append(node.val)
-        
+
     traverse(parsed_tree)
     return postorder_tree
 

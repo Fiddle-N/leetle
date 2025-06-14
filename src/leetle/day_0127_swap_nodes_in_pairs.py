@@ -16,32 +16,32 @@ def unpack(head):
     return unpacked
 
 
-def swap(l):
-  # can't use itertools.grouped
-  # as using Py3.10
-  new_l = []
-  l_iter = iter(l)
-  while batch := list(itertools.islice(l_iter, 2)):
-    new_l.extend(reversed(batch))
-  return new_l
-  
+def swap(node_list):
+    # can't use itertools.grouped
+    # as using Py3.10
+    new_l = []
+    l_iter = iter(node_list)
+    while batch := list(itertools.islice(l_iter, 2)):
+        new_l.extend(reversed(batch))
+    return new_l
 
-def repack(l):
-  head = ListNode()
-  curr = None
-  for num in l:
-    if curr is None:
-      curr = head
-    else:
-      curr.next = ListNode()
-      curr = curr.next
-    curr.val = num
-  return head
-  
+
+def repack(node_list):
+    head = ListNode()
+    curr = None
+    for num in node_list:
+        if curr is None:
+            curr = head
+        else:
+            curr.next = ListNode()
+            curr = curr.next
+        curr.val = num
+    return head
+
 
 def solve(head):
-  if head is None:
-    return None
-  unpacked = unpack(head)
-  swapped = swap(unpacked)
-  return repack(swapped)
+    if head is None:
+        return None
+    unpacked = unpack(head)
+    swapped = swap(unpacked)
+    return repack(swapped)
