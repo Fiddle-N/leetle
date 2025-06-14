@@ -7,6 +7,8 @@ class Item:
   digits: list[int]
 
 def solve(product):
+  if product < 0:
+    return -1
   if product == 0:
     return 10
   if product == 1:
