@@ -11,10 +11,7 @@ def solve(nums):
         return 0
     for n in range(len(nums), 1, -1):
         for idxs in itertools.combinations(range(len(nums)), n):
-            subseq = [
-                nums[idx]
-                for idx in idxs
-            ]
+            subseq = [nums[idx] for idx in idxs]
             if strictly_increasing_subseq(subseq):
                 return n
     return 1
@@ -28,7 +25,7 @@ class TestDay146(unittest.TestCase):
         self.assertEqual(solve([0, 1, 0, 3, 2, 3]), 4)
 
     def test_leetle_case_3(self):
-        self.assertEqual(solve([7, 7, 7, 7, 7, 7, 7]), 1) 
+        self.assertEqual(solve([7, 7, 7, 7, 7, 7, 7]), 1)
 
     def test_leetle_case_4(self):
         self.assertEqual(solve([]), 0)
