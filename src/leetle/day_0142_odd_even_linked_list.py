@@ -1,6 +1,3 @@
-import itertools
-
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -16,13 +13,12 @@ def unpack(head):
     return unpacked
 
 
-def swap(node_list):
-    # can't use itertools.grouped
-    # as using Py3.10
+def interleave(node_list):
     new_l = []
-    l_iter = iter(node_list)
-    while batch := list(itertools.islice(l_iter, 2)):
-        new_l.extend(reversed(batch))
+    for idx in range(0, len(node_list), 2):
+        new_l.append(node_list[idx])
+    for idx in range(1, len(node_list), 2):
+        new_l.append(node_list[idx])
     return new_l
 
 
@@ -43,5 +39,5 @@ def solve(head):
     if head is None:
         return None
     unpacked = unpack(head)
-    swapped = swap(unpacked)
+    swapped = interleave(unpacked)
     return repack(swapped)
